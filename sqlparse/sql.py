@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2016 Andi Albrecht, albrecht.andi@gmail.com
+# Copyright (C) 2009-2018 the sqlparse authors and contributors
+# <see AUTHORS file>
 #
 # This module is part of python-sqlparse and is released under
 # the BSD License: https://opensource.org/licenses/BSD-3-Clause
@@ -418,7 +419,8 @@ class Statement(TokenList):
             if isinstance(token, (Identifier, IdentifierList)):
                 _, dml_keyword = self.token_next(tidx, skip_ws=True)
 
-                if dml_keyword.ttype == T.Keyword.DML:
+                if dml_keyword is not None \
+                        and dml_keyword.ttype == T.Keyword.DML:
                     return dml_keyword.normalized
 
         # Hmm, probably invalid syntax, so return unknown.
@@ -530,6 +532,12 @@ class Where(TokenList):
     M_CLOSE = T.Keyword, (
         'ORDER', 'GROUP', 'LIMIT', 'UNION', 'UNION ALL', 'EXCEPT',
         'HAVING', 'RETURNING', 'INTO')
+
+
+class Having(TokenList):
+    """A HAVING clause."""
+    M_OPEN = T.Keyword, 'HAVING'
+    M_CLOSE = T.Keyword, ('ORDER', 'LIMIT')
 
 
 class Case(TokenList):

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2016 Andi Albrecht, albrecht.andi@gmail.com
+# Copyright (C) 2009-2018 the sqlparse authors and contributors
+# <see AUTHORS file>
 #
 # This module is part of python-sqlparse and is released under
 # the BSD License: https://opensource.org/licenses/BSD-3-Clause
@@ -253,6 +254,7 @@ KEYWORDS = {
     'EXECUTE': tokens.Keyword,
     'EXISTING': tokens.Keyword,
     'EXISTS': tokens.Keyword,
+    'EXPLAIN': tokens.Keyword,
     'EXTERNAL': tokens.Keyword,
     'EXTRACT': tokens.Keyword,
 
@@ -654,6 +656,7 @@ KEYWORDS_COMMON = {
     'INSERT': tokens.Keyword.DML,
     'DELETE': tokens.Keyword.DML,
     'UPDATE': tokens.Keyword.DML,
+    'UPSERT': tokens.Keyword.DML,
     'REPLACE': tokens.Keyword.DML,
     'MERGE': tokens.Keyword.DML,
     'DROP': tokens.Keyword.DDL,

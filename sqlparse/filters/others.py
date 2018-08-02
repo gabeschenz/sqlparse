@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2016 Andi Albrecht, albrecht.andi@gmail.com
+# Copyright (C) 2009-2018 the sqlparse authors and contributors
+# <see AUTHORS file>
 #
 # This module is part of python-sqlparse and is released under
 # the BSD License: https://opensource.org/licenses/BSD-3-Clause
@@ -21,7 +22,7 @@ class StripCommentsFilter(object):
             pidx, prev_ = tlist.token_prev(tidx, skip_ws=False)
             nidx, next_ = tlist.token_next(tidx, skip_ws=False)
             # Replace by whitespace if prev and next exist and if they're not
-            # whitespaces. This doesn't apply if prev or next is a paranthesis.
+            # whitespaces. This doesn't apply if prev or next is a parenthesis.
             if (prev_ is None or next_ is None or
                     prev_.is_whitespace or prev_.match(T.Punctuation, '(') or
                     next_.is_whitespace or next_.match(T.Punctuation, ')')):

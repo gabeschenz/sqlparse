@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2016 Andi Albrecht, albrecht.andi@gmail.com
+# Copyright (C) 2009-2018 the sqlparse authors and contributors
+# <see AUTHORS file>
 #
 # This example is part of python-sqlparse and is released under
 # the BSD License: https://opensource.org/licenses/BSD-3-Clause
@@ -10,7 +11,7 @@
 # SELECT statements.
 #
 # See:
-# http://groups.google.com/group/sqlparse/browse_thread/thread/b0bd9a022e9d4895
+# https://groups.google.com/forum/#!forum/sqlparse/browse_thread/thread/b0bd9a022e9d4895
 
 import sqlparse
 from sqlparse.sql import IdentifierList, Identifier
